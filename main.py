@@ -21,7 +21,7 @@ from ldm.data.base import Txt2ImgIterableBaseDataset
 from ldm.util import instantiate_from_config
 
 
-MULTINODE_HACKS = False
+MULTINODE_HACKS = os.environ.get('MULTINODE_HACKS', False)
 
 @rank_zero_only
 def rank_zero_print(*args):
